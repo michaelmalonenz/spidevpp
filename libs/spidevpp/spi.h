@@ -31,10 +31,10 @@ public:
 	void setDelay(std::chrono::microseconds);
 	std::chrono::microseconds getDelay() const;
 
-	void write(char* pData, size_t len);
-	void read(char* pData, size_t len);
-	void writeRead(char* pData, size_t len);
-	char writeRead(char data);
+	void write(uint8_t* pData, size_t len);
+	void read(uint8_t* pData, size_t len);
+	void writeRead(uint8_t* pData, size_t len);
+	char writeRead(uint8_t data);
 
 	template <class Stream>
 	friend Stream& operator<<(Stream& out, const Spi&);

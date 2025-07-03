@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
 	spi.setSpeed(3900000);
 
 	{
-		char buf[4] = {0};
+		uint8_t buf[4] = {0};
 		spi.read(buf, 4);
 
 		if (buf[0] == 0 &&
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	{
-		char buf[4] = {0};
+		uint8_t buf[4] = {0};
 		spi.write(buf, 4);
 
 		if (buf[0] == 0 &&
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	{
-		char buf[4] = {1, 2, 3, 4};
+		uint8_t buf[4] = {1, 2, 3, 4};
 		spi.writeRead(buf, 4);
 
 		if (buf[0] == 1 &&

@@ -68,7 +68,7 @@ std::chrono::microseconds Spi::getDelay() const {
 	return mDelay;
 }
 
-void Spi::write(char* pData, size_t len) {
+void Spi::write(uint8_t* pData, size_t len) {
 	struct spi_ioc_transfer spi = { 0 };
 
 	if (pData == nullptr)
@@ -86,7 +86,7 @@ void Spi::write(char* pData, size_t len) {
 	}
 }
 
-void Spi::read(char* pData, size_t len) {
+void Spi::read(uint8_t* pData, size_t len) {
 	struct spi_ioc_transfer spi = { 0 };
 
 	if (pData == nullptr)
@@ -104,7 +104,7 @@ void Spi::read(char* pData, size_t len) {
 	}
 }
 
-void Spi::writeRead(char* pData, size_t len) {
+void Spi::writeRead(uint8_t* pData, size_t len) {
 	struct spi_ioc_transfer spi = { 0 };
 
 	if (pData == nullptr)
@@ -122,7 +122,7 @@ void Spi::writeRead(char* pData, size_t len) {
 	}
 }
 
-char Spi::writeRead(char data) {
+char Spi::writeRead(uint8_t data) {
 	writeRead(&data, 1);
 	return data;
 }
